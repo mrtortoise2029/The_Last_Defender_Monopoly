@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="900" prefWidth="1100" style="-fx-background-color: linear-gradient(to bottom, #0a0a0a, #1a1a1a); -fx-border-color: #2a2a2a; -fx-border-width: 4;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ui.BoardController">
+
+    <!-- Zombie Monopoly Board -->
+    <center>
+        <GridPane fx:id="boardGrid" gridLinesVisible="true" prefHeight="834.0" prefWidth="859.0" style="-fx-border-color: #00FF00; -fx-border-width: 3; -fx-background-color: radial-gradient(center 50% 50%, radius 80%, #101010, #000000);">
+
+            <!-- Column and Row Constraints -->
+            <columnConstraints>
+                <ColumnConstraints percentWidth="12.5" />
+                <ColumnConstraints percentWidth="8.5" />
+                <ColumnConstraints percentWidth="8.5" />
+                <ColumnConstraints percentWidth="8.5" />
+                <ColumnConstraints percentWidth="8.5" />
+                <ColumnConstraints percentWidth="8.5" />
+                <ColumnConstraints percentWidth="8.5" />
+                <ColumnConstraints percentWidth="8.5" />
+                <ColumnConstraints percentWidth="8.5" />
+                <ColumnConstraints percentWidth="8.5" />
+                <ColumnConstraints percentWidth="12.5" />
+            </columnConstraints>
+
+            <rowConstraints>
+                <RowConstraints percentHeight="12.5" />
+                <RowConstraints percentHeight="8.5" />
+                <RowConstraints percentHeight="8.5" />
+                <RowConstraints percentHeight="8.5" />
+                <RowConstraints percentHeight="8.5" />
+                <RowConstraints percentHeight="8.5" />
+                <RowConstraints percentHeight="8.5" />
+                <RowConstraints percentHeight="8.5" />
+                <RowConstraints percentHeight="8.5" />
+                <RowConstraints percentHeight="8.5" />
+                <RowConstraints percentHeight="12.5" />
+            </rowConstraints>
+
+            <!-- Center special events -->
+            <children>
+                <Button style="-fx-background-color: linear-gradient(#ff0000, #550000);                                -fx-text-fill: white;                                -fx-font-weight: bold;                                -fx-font-size: 12;                                -fx-border-color: #990000;                                -fx-border-width: 2;                                -fx-effect: dropshadow(gaussian, red, 15, 0.6, 0, 0);" text="🧟‍♂️ Zombie Outbreak!" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+
+                <Button style="-fx-background-color: linear-gradient(#00ff00, #004400);                                -fx-text-fill: white;                                -fx-font-weight: bold;                                -fx-font-size: 12;                                -fx-border-color: #00aa00;                                -fx-border-width: 2;                                -fx-effect: dropshadow(gaussian, lime, 15, 0.6, 0, 0);" text="💉 Safe Zone" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+            </children>
+        </GridPane>
+    </center>
+
+    <!-- Player Status Panel -->
+    <right>
+        <VBox prefHeight="850.0" prefWidth="260.0" spacing="12" style="-fx-background-color: linear-gradient(to bottom, #1b1b1b, #000000);                      -fx-border-color: #33ff33;                      -fx-border-width: 2;                      -fx-effect: dropshadow(gaussian, #00ff00, 20, 0.5, 0, 0);">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+
+            <Label style="-fx-text-fill: #00ff00; -fx-font-size: 18; -fx-font-weight: bold; -fx-alignment: center;" text="💀 Survivors" />
+
+            <!-- Player 1 -->
+            <TitledPane fx:id="p1Pane" expanded="true" style="-fx-text-fill: red; -fx-background-color: rgba(50,0,0,0.7);" text="Player 1 - Red">
+                <content>
+                    <VBox fillWidth="true" spacing="6">
+                        <Label fx:id="p1Name" style="-fx-text-fill: red; -fx-font-weight: bold;" />
+                        <Label fx:id="p1Stats" style="-fx-text-fill: #ff6666;" wrapText="true" />
+                        <Label fx:id="p1Pos" style="-fx-text-fill: red;" />
+                        <Label fx:id="p1Tiles" style="-fx-text-fill: #ffaaaa; -fx-font-size: 10;" wrapText="true" />
+                        <Button fx:id="p1HistoryBtn" style="-fx-background-color: darkred; -fx-text-fill: white; -fx-font-size: 11;" text="View History" />
+                    </VBox>
+                </content>
+            </TitledPane>
+
+            <!-- Player 2 -->
+            <TitledPane fx:id="p2Pane" expanded="true" style="-fx-background-color: rgba(0,50,0,0.7);" text="Player 2 - Green">
+                <content>
+                    <VBox fillWidth="true" spacing="6">
+                        <Label fx:id="p2Name" style="-fx-text-fill: lime; -fx-font-weight: bold;" />
+                        <Label fx:id="p2Stats" style="-fx-text-fill: Purple;" wrapText="true" />
+                        <Label fx:id="p2Pos" style="-fx-text-fill: lime;" />
+                        <Label fx:id="p2Tiles" style="-fx-text-fill: Purple; -fx-font-size: 10;" wrapText="true" />
+                        <Button fx:id="p2HistoryBtn" style="-fx-background-color: darkgreen; -fx-text-fill: white; -fx-font-size: 11;" text="View History" />
+                    </VBox>
+                </content>
+            </TitledPane>
+
+            <!-- Player 3 -->
+            <TitledPane fx:id="p3Pane" expanded="true" style="-fx-background-color: rgba(0,0,60,0.7);" text="Player 3 - Blue">
+                <content>
+                    <VBox fillWidth="true" spacing="6">
+                        <Label fx:id="p3Name" style="-fx-text-fill: cyan; -fx-font-weight: bold;" />
+                        <Label fx:id="p3Stats" style="-fx-text-fill: #80dfff;" wrapText="true" />
+                        <Label fx:id="p3Pos" style="-fx-text-fill: cyan;" />
+                        <Label fx:id="p3Tiles" style="-fx-text-fill: #b3f0ff; -fx-font-size: 10;" wrapText="true" />
+                        <Button fx:id="p3HistoryBtn" style="-fx-background-color: darkblue; -fx-text-fill: white; -fx-font-size: 11;" text="View History" />
+                    </VBox>
+                </content>
+            </TitledPane>
+
+            <!-- Player 4 -->
+            <TitledPane fx:id="p4Pane" expanded="true" style="-fx-background-color: rgba(60,30,0,0.7);" text="Player 4 - Orange">
+                <content>
+                    <VBox fillWidth="true" spacing="6">
+                        <Label fx:id="p4Name" style="-fx-text-fill: orange; -fx-font-weight: bold;" />
+                        <Label fx:id="p4Stats" style="-fx-text-fill: #ffd699;" wrapText="true" />
+                        <Label fx:id="p4Pos" style="-fx-text-fill: orange;" />
+                        <Label fx:id="p4Tiles" style="-fx-text-fill: #ffcc99; -fx-font-size: 10;" wrapText="true" />
+                        <Button fx:id="p4HistoryBtn" style="-fx-background-color: darkorange; -fx-text-fill: white; -fx-font-size: 11;" text="View History" />
+                    </VBox>
+                </content>
+            </TitledPane>
+
+            <Separator style="-fx-background-color: #00ff00;" />
+
+            <!-- Game Info -->
+            <Label fx:id="turnLabel" style="-fx-text-fill: #00ff00; -fx-font-size: 14; -fx-font-weight: bold;" />
+            <Label fx:id="lastRollLabel" style="-fx-text-fill: #cccccc;" />
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label fx:id="timerLabel" style="-fx-text-fill: orange; -fx-font-size: 16; -fx-font-weight: bold;" />
+            </HBox>
+
+            <HBox alignment="CENTER" spacing="8">
+                <Button fx:id="btnRollDice" prefHeight="26.0" prefWidth="89.0" style="-fx-background-color: linear-gradient(#00aa00, #003300);                                -fx-text-fill: white;                                -fx-font-size: 13;                                -fx-font-weight: bold;                                -fx-effect: dropshadow(gaussian, lime, 10, 0.5, 0, 0);" text="🎲 Roll">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin></Button>
+                <Button fx:id="btnEndTurn" style="-fx-background-color: linear-gradient(#ff0000, #550000);                                -fx-text-fill: white;                                -fx-font-size: 12;                                -fx-font-weight: bold;                                -fx-border-color: #990000;                                -fx-border-width: 2;                                -fx-effect: dropshadow(gaussian, red, 10, 0.5, 0, 0);" text="End Turn">
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin></Button>
+            </HBox>
+        </VBox>
+    </right>
+
+    <!-- Bottom Controls -->
+    <bottom>
+        <HBox alignment="CENTER" spacing="20" style="-fx-background-color: #111;                      -fx-border-color: #00ff00;                      -fx-border-width: 1;">
+            <padding>
+                <Insets bottom="12" left="12" right="12" top="12" />
+            </padding>
+            <Button fx:id="btnBackToLobby" style="-fx-background-color: linear-gradient(#333, #000);                            -fx-text-fill: #00ff00;                            -fx-font-weight: bold;                            -fx-effect: dropshadow(gaussian, lime, 10, 0.5, 0, 0);" text="🏚 Back to Safe House" />
+        </HBox>
+    </bottom>
+</BorderPane>

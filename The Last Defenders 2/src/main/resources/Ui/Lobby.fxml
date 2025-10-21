@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0"
+            style="-fx-background-image: url('/images/lobbyphoto1.jpg');
+                   -fx-background-size: cover;
+                   -fx-background-position: center center;"
+            xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Ui.LobbyController">
+
+    <AnchorPane prefHeight="600" prefWidth="800"
+                style="-fx-background-color: rgba(0,0,0,0.7);"
+                AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0">
+
+        <!-- Title -->
+
+
+        <StackPane AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                   AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0"
+                   alignment="CENTER">
+
+            <!-- Main Menu -->
+            <VBox fx:id="mainMenu" alignment="CENTER" prefWidth="200" spacing="20">
+                <Button fx:id="btnStart" prefWidth="200" text="Start Game"
+                        style="-fx-background-color: linear-gradient(to bottom, #222, #550000);
+                               -fx-text-fill: #ff4444;
+                               -fx-font-weight: bold;
+                               -fx-font-size: 16px;
+                               -fx-background-radius: 10;
+                               -fx-border-color: #ff0000;
+                               -fx-border-radius: 10;
+                               -fx-border-width: 2;
+                               -fx-effect: dropshadow(gaussian, rgba(255,0,0,0.6), 10, 0, 0, 0);" />
+                <Button fx:id="btnLoad" prefWidth="200" text="Load Game"
+                        style="-fx-background-color: linear-gradient(to bottom, #111, #333);
+                               -fx-text-fill: #66ff66;
+                               -fx-font-weight: bold;
+                               -fx-font-size: 16px;
+                               -fx-background-radius: 10;
+                               -fx-border-color: #00ff00;
+                               -fx-border-radius: 10;
+                               -fx-border-width: 2;
+                               -fx-effect: dropshadow(gaussian, rgba(0,255,0,0.5), 10, 0, 0, 0);" />
+                <Button fx:id="btnSettings" prefWidth="200" text="Settings"
+                        style="-fx-background-color: linear-gradient(to bottom, #222, #004400);
+                               -fx-text-fill: #00ff99;
+                               -fx-font-weight: bold;
+                               -fx-font-size: 16px;
+                               -fx-background-radius: 10;
+                               -fx-border-color: #00ff99;
+                               -fx-border-radius: 10;
+                               -fx-border-width: 2;
+                               -fx-effect: dropshadow(gaussian, rgba(0,255,155,0.6), 10, 0, 0, 0);" />
+                <Button fx:id="btnExit" prefWidth="200" text="Exit"
+                        style="-fx-background-color: linear-gradient(to bottom, #330000, #110000);
+                               -fx-text-fill: #ff0000;
+                               -fx-font-weight: bold;
+                               -fx-font-size: 16px;
+                               -fx-background-radius: 10;
+                               -fx-border-color: #ff0000;
+                               -fx-border-radius: 10;
+                               -fx-border-width: 2;
+                               -fx-effect: dropshadow(gaussian, rgba(255,0,0,0.8), 10, 0, 0, 0);" />
+            </VBox>
+
+            <!-- Start Submenu -->
+            <VBox fx:id="startSubMenu" alignment="CENTER" managed="false" visible="false" spacing="20">
+                <Button fx:id="btnAI" prefWidth="200" text="AI"
+                        style="-fx-background-color: linear-gradient(to bottom, #222, #660000);
+                               -fx-text-fill: #ff6666;
+                               -fx-font-size: 15px;
+                               -fx-background-radius: 10;" />
+                <Button fx:id="btnCoop" prefWidth="200" text="Co-op"
+                        style="-fx-background-color: linear-gradient(to bottom, #111, #003300);
+                               -fx-text-fill: #00ff66;
+                               -fx-font-size: 15px;
+                               -fx-background-radius: 10;" />
+                <Button fx:id="btnPrevious1" prefWidth="200" text="Previous"
+                        style="-fx-background-color: #222;
+                               -fx-text-fill: #cccccc;
+                               -fx-font-size: 15px;
+                               -fx-background-radius: 10;" />
+            </VBox>
+
+            <!-- AI Submenu -->
+            <VBox fx:id="aiSubMenu" alignment="CENTER" managed="false" visible="false" spacing="20">
+                <Button fx:id="btnSelectPlayer" prefWidth="200" text="Select Player"
+                        style="-fx-background-color: linear-gradient(to bottom, #222, #004400);
+                               -fx-text-fill: #33ff99;
+                               -fx-font-size: 15px;
+                               -fx-background-radius: 10;" />
+                <Button fx:id="btnPrevious2" prefWidth="200" text="Previous"
+                        style="-fx-background-color: #222;
+                               -fx-text-fill: #cccccc;
+                               -fx-font-size: 15px;
+                               -fx-background-radius: 10;" />
+            </VBox>
+
+            <!-- Player selection menu -->
+            <VBox fx:id="playerSelectMenu" alignment="CENTER" managed="false" prefWidth="200" spacing="20" visible="false">
+                <Label text="Select Players"
+                       style="-fx-font-size: 20px; -fx-text-fill: #ff3333; -fx-font-weight: bold; -fx-effect: dropshadow(gaussian, rgba(255,0,0,0.6), 10, 0, 0, 0);" />
+                <Button fx:id="btn2Players" prefWidth="200" text="2 Players"
+                        style="-fx-background-color: #111; -fx-text-fill: #00ff00; -fx-font-weight: bold;" />
+                <Button fx:id="btn3Players" prefWidth="200" text="3 Players"
+                        style="-fx-background-color: #111; -fx-text-fill: #00ff66; -fx-font-weight: bold;" />
+                <Button fx:id="btn4Players" prefWidth="200" text="4 Players"
+                        style="-fx-background-color: #111; -fx-text-fill: #33ff99; -fx-font-weight: bold;" />
+                <Button fx:id="btnBackFromPlayerSelect" prefWidth="200" text="Back"
+                        style="-fx-background-color: #222; -fx-text-fill: #cccccc;" />
+            </VBox>
+
+            <!-- Co-op Submenu -->
+            <VBox fx:id="coopSubMenu" alignment="CENTER" managed="false" visible="false" spacing="20">
+                <Button fx:id="btnCreateRoom" prefWidth="200" text="Create Room"
+                        style="-fx-background-color: #222; -fx-text-fill: #00ff99; -fx-background-radius: 10;" />
+                <Button fx:id="btnSearchRoom" prefWidth="200" text="Search Room"
+                        style="-fx-background-color: #111; -fx-text-fill: #00ff99; -fx-background-radius: 10;" />
+                <Button fx:id="btnPrevious3" prefWidth="200" text="Previous"
+                        style="-fx-background-color: #222; -fx-text-fill: #cccccc; -fx-background-radius: 10;" />
+            </VBox>
+
+            <!-- Settings Menu -->
+            <VBox fx:id="settingsMenu" alignment="CENTER" managed="false" visible="false" spacing="20">
+                <CheckBox fx:id="chkSound" text="Enable Sound" selected="true"
+                          style="-fx-text-fill: #00ff99; -fx-font-size: 14px;" />
+                <TextField fx:id="txtPlayerName" prefWidth="200" promptText="Enter Player Name"
+                           style="-fx-background-color: #111; -fx-text-fill: white; -fx-prompt-text-fill: gray;
+                                  -fx-border-color: #00ff99; -fx-border-radius: 8;" />
+                <Button fx:id="btnSaveSettings" prefWidth="200" text="Save"
+                        style="-fx-background-color: linear-gradient(to bottom, #004400, #111);
+                               -fx-text-fill: #00ff99; -fx-font-size: 15px; -fx-background-radius: 10;" />
+                <Button fx:id="btnPrevious4" prefWidth="200" text="Previous"
+                        style="-fx-background-color: #222; -fx-text-fill: #cccccc;" />
+            </VBox>
+
+            <!-- Waiting Submenu -->
+            <VBox fx:id="waitingSubMenu" alignment="CENTER" managed="false" visible="false" spacing="20">
+                <Label fx:id="lblWaitingMessage" text="Waiting..."
+                       style="-fx-text-fill: #00ff99; -fx-font-size: 14px; -fx-font-weight: bold;" />
+                <Button fx:id="btnStartGame" prefWidth="200" text="Start Game" visible="false"
+                        style="-fx-background-color: linear-gradient(to bottom, #004400, #111);
+                               -fx-text-fill: #00ff99; -fx-font-size: 15px; -fx-background-radius: 10;" />
+                <Button fx:id="btnCancelWaiting" prefWidth="200" text="Cancel"
+                        style="-fx-background-color: #222; -fx-text-fill: #cccccc; -fx-background-radius: 10;" />
+            </VBox>
+
+        </StackPane>
+
+        <!-- Footer -->
+        <Label layoutX="10" layoutY="570"
+               style="-fx-font-size: 12px; -fx-text-fill: #555;"
+               text="The Last Defenders" />
+    </AnchorPane>
+</AnchorPane>
